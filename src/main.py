@@ -7,7 +7,7 @@ import segmentation
 import data_preprocessing
 from forward_kinematics_cmu import get_gt
 import viz
-from generate_video import generate_video
+# from generate_video import generate_video
 import warnings
 warnings.filterwarnings("ignore")
 #suppress tensorflow warning
@@ -54,9 +54,9 @@ tf.app.flags.DEFINE_boolean("gen_video",False,"whether to generate video.")
 FLAGS = tf.app.flags.FLAGS
 
 if FLAGS.dataset=="cmu":
- 	data_dir = ("./data/cmu_mocap")
+ 	data_dir = ("/gscratch/stf/manolan/data/cmu_mocap")
 elif FLAGS.dataset=="H3.6M":
-	data_dir = ("./data/h3.6m")
+	data_dir = ("/gscratch/stf/manolan/data/h3.6m")
 
 train_dir = os.path.normpath(os.path.join(FLAGS.train_dir,FLAGS.dataset,"{0}_actions".format(FLAGS.num_actions),
 	"in_{0}".format(FLAGS.source_seq_len),"out_{0}".format(FLAGS.target_seq_len),

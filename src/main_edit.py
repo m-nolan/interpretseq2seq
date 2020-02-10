@@ -99,12 +99,12 @@ def main(_):
 		training.train_model(sess,model,train_dir,data,model.batch_size,current_step,FLAGS.iterations)
 	print("Finding temporal segments...")
 	test_states,all_states,cuts = segmentation.find_cuts(sess,model,data.norm_complete_train)
-    print("Breaking before clustering - HYAK OMP incompatibilities are driving errors.")
-    model.summary()
-    print("Saving model...")
-    model.save("/gscratch/stf/manolan/is2s_model/model_out.h5")
-    print("Model saved to /gscratch/stf/manolan/is2s_model/model_out.h5")
-    print("\\////\\")
+	print("Breaking before clustering - HYAK OMP incompatibilities are driving errors.")
+	model.summary()
+	print("Saving model...")
+	model.save("/gscratch/stf/manolan/is2s_model/model_out.h5")
+	print("Model saved to /gscratch/stf/manolan/is2s_model/model_out.h5")
+	print("\\////\\")
     
 
 if __name__ == "__main__":
